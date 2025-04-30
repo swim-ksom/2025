@@ -5,16 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SWIM@KSoM - Summer Workshop in Mathematics</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
 
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
 
     <script>
         MathJax = {
-            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
-            svg: { fontCache: 'global' }
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                packages: ['base', 'ams']
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            },
+            loader: {
+                load: ['[tex]/ams']
+            }
         };
     </script>
     <script type="text/javascript" id="MathJax-script" async
@@ -22,21 +33,18 @@
     </script>
 
 </head>
-
-
-    
 <body>
     <header id="header"></header>
 
     <main>
-        <div class="container">
+        <div class="container padding-x padding-y sm:padding-x sm:padding-y md:padding-x md:padding-y lg:padding-x lg:padding-y">
 
             <h1>Algebra - SWIM@KSoM 2025</h1>
 
-            <section id="algebra-instructors-box">
+            <section id="algebra-instructors-box" class="card">
                 <h2>Course Instructors</h2>
-                <div class="instructor-list">
-                    <div class="instructor-item">
+                <div class="instructor-list flex-center">
+                    <div class="instructor-item text-center">
                          <strong>Algebra</strong>
                          <span>
                              U. K. Anandavardhanan (IIT Bombay)<br>
@@ -47,16 +55,16 @@
                  </div>
             </section>
 
-            <section id="algebra-description-box">
+            <section id="algebra-description-box" class="card">
                 <h2>Course Description</h2>
                 <p>
                     Based on <strong>Artin's Algebra</strong>, this course begins with Matrix Operations, Row Reduction, the Matrix Transpose, Determinants, and Permutations. It then introduces fundamental algebraic structures, covering Laws of Composition, Groups and Subgroups, Subgroups of the Additive Group of Integers $\textbf{Z}$, Cyclic Groups, Homomorphisms, and Isomorphisms. Concepts like Equivalence Relations, Partitions, Cosets, Modular Arithmetic, the Correspondence Theorem, Product Groups, and Quotient Groups are explored. The course also touches upon Group Actions, including Cayley's Theorem, the Class Equation, and concludes with the Sylow Theorems.
                 </p>
             </section>
 
-            <section id="lecture-schedule-box">
+            <section id="lecture-schedule-box" class="card">
                  <h2>Lecture Schedule & Resources</h2>
-                 <div class="table-container">
+                 <div class="table-container responsive-table">
                      <table>
                          <thead>
                              <tr>
