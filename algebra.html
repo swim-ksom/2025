@@ -47,18 +47,18 @@
                      </span>
                  </div>
              </div>
-        </section>
+         </section>
 
-        <section id="algebra-description-box" class="mb-12 md:mb-16 bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-200">
-            <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-8 md:mb-10 text-center relative pb-4 section-title-underline">Algebra Course Description</h2>
-            <p class="text-gray-700 text-base md:text-lg leading-relaxed">
-                Based on <strong>Artin's Algebra</strong>, this course begins with Matrix Operations, Row Reduction, the Matrix Transpose, Determinants, and Permutations. It then introduces fundamental algebraic structures, covering Laws of Composition, Groups and Subgroups, Subgroups of the Additive Group of Integers $\textbf{Z}$, Cyclic Groups, Homomorphisms, and Isomorphisms. Concepts like Equivalence Relations, Partitions, Cosets, Modular Arithmetic, the Correspondence Theorem, Product Groups, and Quotient Groups are explored. The course also touches upon Group Actions, including Cayley's Theorem, the Class Equation, and concludes with the Sylow Theorems.
-            </p>
-        </section>
+         <section id="algebra-description-box" class="mb-12 md:mb-16 bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-200">
+             <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-8 md:mb-10 text-center relative pb-4 section-title-underline">Algebra Course Description</h2>
+             <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+                 Based on <strong>Artin's Algebra</strong>, this course begins with Matrix Operations, Row Reduction, the Matrix Transpose, Determinants, and Permutations. It then introduces fundamental algebraic structures, covering Laws of Composition, Groups and Subgroups, Subgroups of the Additive Group of Integers $\textbf{Z}$, Cyclic Groups, Homomorphisms, and Isomorphisms. Concepts like Equivalence Relations, Partitions, Cosets, Modular Arithmetic, the Correspondence Theorem, Product Groups, and Quotient Groups are explored. The course also touches upon Group Actions, including Cayley's Theorem, the Class Equation, and concludes with the Sylow Theorems.
+             </p>
+         </section>
 
-        <section id="lecture-schedule-box" class="mb-12 md:mb-16">
-             <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-8 md:mb-10 text-center relative pb-4 section-title-underline">Lecture Schedule & Resources</h2>
-             <div class="overflow-x-auto bg-white rounded-xl shadow-lg border border-gray-200">
+         <section id="lecture-schedule-box" class="mb-12 md:mb-16">
+              <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-8 md:mb-10 text-center relative pb-4 section-title-underline">Lecture Schedule & Resources</h2>
+              <div class="overflow-x-auto bg-white rounded-xl shadow-lg border border-gray-200">
                  <table class="w-full min-w-[600px] text-left text-sm md:text-base">
                      <thead class="bg-indigo-600 text-white uppercase tracking-wider">
                          <tr>
@@ -152,24 +152,40 @@
                      </tbody>
                  </table>
              </div>
-        </section>
+         </section>
 
-        </div>
+         <p id="last-updated" class="text-center text-gray-500 text-sm mt-8"></p>
+
+     </div>
 
     <footer id="footer"></footer>
 
     <script>
+        // Fetch and insert header
         fetch('header.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header').innerHTML = data;
             });
 
+        // Fetch and insert footer
         fetch('footer.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('footer').innerHTML = data;
             });
+
+        // Update the last updated timestamp
+        document.addEventListener('DOMContentLoaded', function() {
+            const lastUpdatedElement = document.getElementById('last-updated');
+            if (lastUpdatedElement) {
+                const now = new Date();
+                // Options for formatting the date and time
+                const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+                const formattedDate = now.toLocaleDateString('en-US', options);
+                lastUpdatedElement.textContent = `Last updated on: ${formattedDate}`;
+            }
+        });
     </script>
 </body>
 </html>
